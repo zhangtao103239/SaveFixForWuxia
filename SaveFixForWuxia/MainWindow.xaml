@@ -1,0 +1,18 @@
+﻿<Window x:Class="SaveFixForWuxia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SaveFixForWuxia"
+        mc:Ignorable="d"
+        Title="侠客风云传前传修改器" Height="289.713" Width="540.072">
+    <Grid>
+        <Label x:Name="TitleLabel" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10" Width="240" Height="30" FontSize="16" FontWeight="Heavy" HorizontalContentAlignment="Center">侠客风云传前传修改器</Label>
+        <Label x:Name="AuthorLabel" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,40" FontSize="12" Width="90" HorizontalContentAlignment="Center">by zhangtao</Label>
+        <Border HorizontalAlignment="Center" VerticalAlignment="Center" Width="350" Height="130" Margin="0,25,0,0" BorderBrush="Black" BorderThickness="2">
+            <TextBlock x:Name="TipsTextBlock" FontSize="14" FontWeight="Medium" TextWrapping="Wrap" Margin="0"><Run Text="     此程序完全为个人开发,仅限于试用和学习."/><LineBreak/><Run Text="值得注意的是,滥用修改器将失去游戏的本身乐趣,请慎用"/><LineBreak/><Run Text="本程序由zhangtao基于C#开发,主要内容是对于存档文件的解析和更改,新手初作.如果有bug,请联系开发者"></Run><Run Text="zhagntao103239@163.com" Foreground="Blue" ></Run><LineBreak/><Run Text="感谢您的使用!(虽然我觉得没人用)"/></TextBlock>
+        </Border>
+        <Button x:Name="ExitButton" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="50,15" FontSize="14" Foreground="Red" Width="60" Click="ExitButton_Click">退出</Button>
+        <Button x:Name="BeginButton" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="50,15" FontSize="14" Foreground="Blue" Width="60" Click="BeginButton_Click">开始</Button>
+    </Grid>
+</Window>
