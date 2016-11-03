@@ -67,9 +67,38 @@ namespace SaveFixForWuxia
         private void DelNeiGongButton_Click(object sender, RoutedEventArgs e)
         {
             int SelectIndex = this.NeigongListView.SelectedIndex;
+            if (SelectIndex == -1)
+                return;
             this.NeigongJArray.RemoveAt(SelectIndex);
             this.NeigongListView.Items.RemoveAt(SelectIndex);
-            this.npc.NeigongList=this.NeigongJArray;
+            //this.npc.NeigongList=this.NeigongJArray;
+        }
+
+        private void ChangeLevelButton_Click(object sender, RoutedEventArgs e)
+        {
+            int SelectIndex = this.NeigongListView.SelectedIndex;
+            if (SelectIndex == -1)
+                return;
+            ChangeLevel newChangelevel = new ChangeLevel(this.NeigongJArray[SelectIndex]);
+            newChangelevel.ShowDialog();
+            this.Initial();
+        }
+
+        private void DelTalentButton_Click(object sender, RoutedEventArgs e)
+        {
+            int SelectIndex = this.TalentListView.SelectedIndex;
+            if (SelectIndex == -1)
+                return;
+            this.TalentJArray.RemoveAt(SelectIndex);
+            this.TalentListView.Items.RemoveAt(SelectIndex);
+            //this.npc.NeigongList=this.NeigongJArray;
+        }
+
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.npc.NeigongList = this.NeigongJArray;
+            this.npc.TalentList = this.TalentJArray;
+            this.Close();
         }
     }
 }

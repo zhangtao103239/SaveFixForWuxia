@@ -74,6 +74,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ChangeLevel.xaml.cs">
+      <DependentUpon>ChangeLevel.xaml</DependentUpon>
+    </Compile>
     <Compile Include="NpcInfo.xaml.cs">
       <DependentUpon>NpcInfo.xaml</DependentUpon>
     </Compile>
@@ -84,6 +87,10 @@
       <DependentUpon>saveLoad.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Page Include="ChangeLevel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

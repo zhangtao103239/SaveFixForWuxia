@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SaveFixForWuxia"
         mc:Ignorable="d"
-        Title="侠客风云传前传修改器" Height="289.713" Width="540.072">
+        Title="侠客风云传前传修改器" Height="289.713" Width="540.072" WindowStartupLocation="CenterScreen">
     <Grid>
         <Label x:Name="TitleLabel" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,10" Width="240" Height="30" FontSize="16" FontWeight="Heavy" HorizontalContentAlignment="Center">侠客风云传前传修改器</Label>
         <Label x:Name="AuthorLabel" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="5,40" FontSize="12" Width="90" HorizontalContentAlignment="Center">by zhangtao</Label>

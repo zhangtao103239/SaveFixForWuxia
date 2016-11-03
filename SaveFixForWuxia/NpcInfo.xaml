@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SaveFixForWuxia"
         mc:Ignorable="d"
-        Title="NpcInfo" Height="467.2" Width="340">
+        Title="人物详情" Height="467.2" Width="340" WindowStartupLocation="CenterScreen">
     <Grid>
         <Canvas Margin="10,17,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="338" Height="33">
             <Label  Content="名字:" FontSize="16" Height="33" Canvas.Left="50"/>
             <Label x:Name="NameLabel" Height="33" Width="100" Canvas.Right="80" Canvas.Top="0" FontSize="16" >欧阳康</Label>
         </Canvas>
-        <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,53,13.6,0" Width="338" Height="2" Background="#FF475FE4" ></Label>
+        <Label HorizontalAlignment="Center" VerticalAlignment="Top" Margin="10,53,13.6,0" Width="338" Height="2" Background="#FF475FE4" />
         <Canvas Margin="10,69,13.6,169.6" >
             <Label Canvas.Left="68" Canvas.Top="10" >内功列表</Label>
             <ListView x:Name="NeigongListView" Height="150" Width="184" Canvas.Left="10" Canvas.Top="40" ScrollViewer.VerticalScrollBarVisibility="Visible">
@@ -19,7 +19,7 @@
             </ListView>
             <Button x:Name="AddNeiGongButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="45">增加内功</Button>
             <Button x:Name="DelNeiGongButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="94" Click="DelNeiGongButton_Click">删除内功</Button>
-            <Button x:Name="ChangeLevelButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="150">修改等级</Button>
+            <Button x:Name="ChangeLevelButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="150" Click="ChangeLevelButton_Click">修改等级</Button>
         </Canvas>
         <Canvas Margin="10,258,13.6,60.6">
             <Label Canvas.Left="68" Canvas.Top="10">天赋列表</Label>
@@ -27,9 +27,10 @@
                 <ListViewItem Height="35" Width="163" Content="身残志坚" HorizontalContentAlignment="Center"></ListViewItem>
             </ListView>
             <Button x:Name="AddTalentButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="40">增加天赋</Button>
-            <Button x:Name="DelTalentButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="88">删除天赋</Button>
+            <Button x:Name="DelTalentButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="88" Click="DelTalentButton_Click">删除天赋</Button>
         </Canvas>
         <Button Margin="48,394,224.6,0" x:Name="CancelButton" Height="30" VerticalAlignment="Top" Click="CancelButton_Click">返回</Button>
-        <Button Margin="217,394,55.6,0" x:Name="ConfirmButton" Height="30" VerticalAlignment="Top">确定</Button>
+        <Button Margin="217,394,55.6,0" x:Name="ConfirmButton" Height="30" VerticalAlignment="Top" Click="ConfirmButton_Click">确定</Button>
+        
     </Grid>
 </Window>

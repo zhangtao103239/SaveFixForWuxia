@@ -142,6 +142,8 @@ namespace SaveFixForWuxia
         private void TeamListView_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             int npcIndex = TeamListView.SelectedIndex;
+            if (npcIndex == -1)
+                return;
             Console.WriteLine(ConverID(teamNpcList[npcIndex].iNpcID.ToString(), 1));
             //开启一个新的窗口用来显示用户Info
             NpcInfo npcinfo = new NpcInfo(teamNpcList[npcIndex]);
@@ -157,6 +159,8 @@ namespace SaveFixForWuxia
         {
             
             int npcIndex = TeamListView.SelectedIndex;
+            if (npcIndex == -1)
+                return;
             int npcID = teamNpcList[npcIndex].iNpcID.ToObject<Int32>();
             if (npcID==210001||npcID==210002||npcID==200000)
             {
@@ -172,6 +176,8 @@ namespace SaveFixForWuxia
         private void TeamMateDetail_Click(object sender, RoutedEventArgs e)
         {
             int npcIndex = TeamListView.SelectedIndex;
+            if (npcIndex == -1)
+                return;
             Console.WriteLine(ConverID(teamNpcList[npcIndex].iNpcID.ToString(), 1));
             //开启一个新的窗口用来显示用户Info
             NpcInfo npcinfo = new NpcInfo(teamNpcList[npcIndex]);
