@@ -1,0 +1,34 @@
+﻿<Window x:Class="SaveFixForWuxia.SaveFix"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SaveFixForWuxia"
+        mc:Ignorable="d"
+        Title="SaveFix" Height="437.618" Width="396.89">
+    <Grid Height="Auto">
+        <Canvas VerticalAlignment="Top" Margin="10,30,10,0" Height="30" d:IsLocked="True">
+            <Label  FontSize="16" FontWeight="Heavy" Content="金钱:"/>
+            <TextBox x:Name="MoneyTextBox" FontSize="15" Width="72" Height="30" Text="45" Canvas.Left="60" Canvas.Top="0" VerticalContentAlignment="Center"/>
+            <Label FontSize="16" Canvas.Left="150" FontWeight="Heavy" >阅历:</Label>
+            <TextBox x:Name="YueLiTexTBox" FontSize="20" Width="50" Height="30" Canvas.Left="210" VerticalContentAlignment="Center">20</TextBox>
+            <Button x:Name="ItemListButton" Height="30" Width="60" Canvas.Right="0" Click="ItemListButton_Click">
+                <Button.Background>
+                    <RadialGradientBrush>
+                        <GradientStop Color="#FFFCFCFC" Offset="0.093"/>
+                        <GradientStop Color="#FF71E2D8" Offset="1"/>
+                    </RadialGradientBrush>
+                </Button.Background> 物品栏
+            </Button>
+        </Canvas>
+        <Label HorizontalAlignment="Left" VerticalAlignment="Top" Margin="51,73,0,0" Width="149" Height="26" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" d:IsLocked="True" >队伍成员</Label>
+        <ListView x:Name="TeamListView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="30,110,0,0" Width="200" Height="234" ScrollViewer.VerticalScrollBarVisibility="Visible" MouseDoubleClick="TeamListView_MouseDoubleClick" d:IsLocked="True">
+            <ListViewItem Content="ListViewItem" Height="30" HorizontalContentAlignment="Center" FontSize="15" Width="176"/>
+        </ListView>
+        <Button x:Name="AddTeamMate" Margin="276,112,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="72" Click="AddTeamMate_Click">增加队员</Button>
+        <Button x:Name="DelTeamMate" Margin="276,181,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="72" Click="DelTeamMate_Click">删除队员</Button>
+        <Button x:Name="TeamMateDetail" Margin="276,256,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Height="31" Width="72" Click="TeamMateDetail_Click">查看详情</Button>
+        <Button x:Name="BackButton" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,360,0,0" FontSize="18" Click="BackButton_Click" d:IsLocked="True">返回</Button>
+        <Button x:Name="ConfirmButton" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,360,20,0" FontSize="18" Click="ConfirmButton_Click" d:IsLocked="True">确定修改</Button>
+    </Grid>
+</Window>

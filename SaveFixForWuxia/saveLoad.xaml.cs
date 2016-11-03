@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using Microsoft.Win32;
 using System.Threading;
+using Newtonsoft.Json;
+using System.IO;
 
 namespace SaveFixForWuxia
 {
@@ -21,8 +23,8 @@ namespace SaveFixForWuxia
     /// </summary>
     public partial class saveLoad : Window
     {
+        dynamic saveJson;
         String saveFileName;
-
         public saveLoad()
         {
             InitializeComponent();
@@ -32,20 +34,35 @@ namespace SaveFixForWuxia
         {
             OpenFileDialog ofd = new OpenFileDialog();
             ofd.Filter = "Save File|*.Save";
-            ofd.InitialDirectory = @"E:\TencentGames\rail_apps\xiakefengyunzhuanQ\Config\SaveData";
+            ofd.InitialDirectory =Properties.Settings.Default.pathName;
+            ofd.Multiselect = false;
             ofd.ShowDialog();
             this.saveFileName = ofd.FileName;
-            this.PathText.Text = this.saveFileName;
+            this.PathText.Text = ofd.FileName;
+            if (String.IsNullOrEmpty(this.saveFileName))
+                return;
+            FileInfo fi = new FileInfo(ofd.FileName);
+            Properties.Settings.Default.pathName = fi.DirectoryName;
+            Properties.Settings.Default.Save();
         }
 
-        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        private async void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            Thread saveLoadThread = new Thread(new ThreadStart(this.SaveLoad));
-            saveLoadThread.Start();
+            if (String.IsNullOrEmpty(this.saveFileName))
+                return;
+            await Task.Run(() => this.SaveLoad());
+            //Thread saveLoadThread = new Thread(new ThreadStart(this.SaveLoad));
+            //saveLoadThread.Start();
+
+            SaveFix sf = new SaveFix(ref saveJson);
+            sf.Show();
         }
         private void SaveLoad()
         {
-            
+            StreamReader saveStreamReader = new StreamReader(this.saveFileName, Encoding.ASCII);
+            String saveString = saveStreamReader.ReadToEnd();
+            saveJson = JsonConvert.DeserializeObject(saveString);
+            saveStreamReader.Close();
         }
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
