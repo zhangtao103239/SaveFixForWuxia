@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SaveFixForWuxia"
         mc:Ignorable="d"
-        Title="人物详情" Height="467.2" Width="340" WindowStartupLocation="CenterScreen">
+        Title="人物详情" Height="467.2" Width="340">
     <Grid>
         <Canvas Margin="10,17,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="338" Height="33">
             <Label  Content="名字:" FontSize="16" Height="33" Canvas.Left="50"/>

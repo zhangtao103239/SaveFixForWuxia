@@ -80,6 +80,8 @@ namespace SaveFixForWuxia
             if (SelectIndex == -1)
                 return;
             ChangeLevel newChangelevel = new ChangeLevel(this.NeigongJArray[SelectIndex]);
+            newChangelevel.Top = this.Top + this.Height / 3;
+            newChangelevel.Left = this.Left + this.Width / 3;
             newChangelevel.ShowDialog();
             this.Initial();
         }

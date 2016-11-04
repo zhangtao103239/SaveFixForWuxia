@@ -147,6 +147,8 @@ namespace SaveFixForWuxia
             Console.WriteLine(ConverID(teamNpcList[npcIndex].iNpcID.ToString(), 1));
             //开启一个新的窗口用来显示用户Info
             NpcInfo npcinfo = new NpcInfo(teamNpcList[npcIndex]);
+            npcinfo.Top = this.Top;
+            npcinfo.Left = this.Left * 0.8;
             npcinfo.Show();
         }
 
@@ -181,6 +183,8 @@ namespace SaveFixForWuxia
             Console.WriteLine(ConverID(teamNpcList[npcIndex].iNpcID.ToString(), 1));
             //开启一个新的窗口用来显示用户Info
             NpcInfo npcinfo = new NpcInfo(teamNpcList[npcIndex]);
+            npcinfo.Top = this.Top;
+            npcinfo.Left = this.Left * 0.8;
             npcinfo.Show();
         }
     }

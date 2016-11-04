@@ -1,0 +1,19 @@
+﻿<Page x:Class="SaveFixForWuxia.ItemList"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SaveFixForWuxia"
+      mc:Ignorable="d" 
+      d:DesignHeight="455" d:DesignWidth="400"
+      Title="物品栏">
+
+    <Grid>
+        <Label Margin="10,10,10,0" Height="40" VerticalAlignment="Top" FontSize="20" HorizontalContentAlignment="Center" FontWeight="Heavy">物品栏</Label>
+        <ListView x:Name="ItemListView" Margin="25,65,0,0" Height="325" VerticalAlignment="Top" HorizontalAlignment="Left" Width="250">
+            <ListViewItem  Height="35" HorizontalContentAlignment="Center" Content="大宝剑:1"/>
+
+        </ListView>
+        <Button x:Name="BcakButton" Margin="33,0,0,19" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Click="BcakButton_Click">返回</Button>
+    </Grid>
+</Page>

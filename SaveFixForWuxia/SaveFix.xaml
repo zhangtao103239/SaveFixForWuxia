@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SaveFixForWuxia"
         mc:Ignorable="d"
-        Title="存档" Height="437.618" Width="396.89" WindowStartupLocation="CenterOwner">
+        Title="存档" Height="437.618" Width="396.89">
     <Grid Height="Auto" d:IsLocked="True">
         <Canvas VerticalAlignment="Top" Margin="10,30,10,0" Height="30" d:IsLocked="True">
             <Label  FontSize="16" FontWeight="Heavy" Content="金钱:" d:IsLocked="True"/>

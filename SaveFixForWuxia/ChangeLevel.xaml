@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SaveFixForWuxia"
         mc:Ignorable="d"
-        Title="修改等级" Height="121.2" Width="238.2" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ScrollViewer.VerticalScrollBarVisibility="Disabled">
+        Title="修改等级" Height="121.2" Width="238.2" ResizeMode="NoResize"  ScrollViewer.VerticalScrollBarVisibility="Disabled">
 
     <Grid Background="White">
         <Label x:Name="NeiGongName" Margin="10,11,0,0" FontSize="16" Content="九阴真经:      Lv" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Width="129" Height="30" VerticalAlignment="Top"/>

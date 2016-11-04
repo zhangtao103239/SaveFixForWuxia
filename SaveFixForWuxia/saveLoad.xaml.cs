@@ -54,8 +54,12 @@ namespace SaveFixForWuxia
             //Thread saveLoadThread = new Thread(new ThreadStart(this.SaveLoad));
             //saveLoadThread.Start();
 
+
             SaveFix sf = new SaveFix(ref saveJson);
-            sf.Show();
+            sf.Top = this.Top;
+            sf.Left = this.Left;
+            sf.ShowDialog();
+            
         }
         private void SaveLoad()
         {
