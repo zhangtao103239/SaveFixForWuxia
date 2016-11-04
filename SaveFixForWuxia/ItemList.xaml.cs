@@ -10,24 +10,50 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Newtonsoft.Json.Linq;
 
 namespace SaveFixForWuxia
 {
     /// <summary>
     /// ItemList.xaml 的交互逻辑
     /// </summary>
-    public partial class ItemList : Page
+    public partial class ItemList : Window
     {
-        public ItemList()
+        private JArray ItemJarray;
+        private Button ParentItemButton;
+        public ItemList(JArray ItemJarray,Button ParentItemButton)
         {
+            this.ItemJarray = ItemJarray;
+            this.ParentItemButton = ParentItemButton;
             InitializeComponent();
+        }
+
+        private void Initial()
+        {
+            foreach(JValue item in this.ItemJarray)
+            {
+                ListViewItem myItem = new ListViewItem();
+                myItem.Height = 35;
+                myItem.HorizontalContentAlignment = HorizontalAlignment.Center;
+                Content = "";
+                this.ItemListView.Items.Add(myItem);
+            }
+            //< ListViewItem  Height = "35" HorizontalContentAlignment = "Center" Content = "大宝剑:1" />
+        }
+        private void ConfirmButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
         private void BcakButton_Click(object sender, RoutedEventArgs e)
         {
             
+        }
+
+        private void Window_Closed(object sender, EventArgs e)
+        {
+            this.ParentItemButton.IsEnabled = true;
         }
     }
 }
