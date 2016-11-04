@@ -92,10 +92,10 @@ namespace SaveFixForWuxia
 
             teamNpcList = new List<dynamic>(teamList.Count);
 
-            foreach (dynamic npc in saveJson.m_NpcList)
+            foreach (JToken teamMember in teamList)
             {
 
-                foreach(JToken teamMember in teamList)
+                foreach(dynamic npc in saveJson.m_NpcList)
                 {
                     if (npc.iNpcID == teamMember)
                     {
