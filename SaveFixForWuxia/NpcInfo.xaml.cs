@@ -61,7 +61,11 @@ namespace SaveFixForWuxia
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("放弃本次更改并返回吗?", "取消", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+            else return;
         }
 
         private void DelNeiGongButton_Click(object sender, RoutedEventArgs e)

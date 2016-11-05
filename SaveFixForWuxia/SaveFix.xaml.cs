@@ -81,7 +81,7 @@ namespace SaveFixForWuxia
 
         private void ItemListButton_Click(object sender, RoutedEventArgs e)
         {
-            ItemList myItemList = new ItemList(this.saveJson.m_BackpackList,this.ItemListButton);
+            ItemList myItemList = new ItemList(this.saveJson,this.ItemListButton);
             myItemList.Top = this.Top + this.Height / 4;
             myItemList.Left = this.Left + this.Width / 3;
             this.ItemListButton.IsEnabled = false;
