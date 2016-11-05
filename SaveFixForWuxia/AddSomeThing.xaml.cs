@@ -41,19 +41,20 @@ namespace SaveFixForWuxia
                 switch (choose)
                 {
                     case 1:
-                        filestr = File.ReadAllText(@"..\..\NPClist");
+
+                        filestr = Properties.Resources.NPClist;
                         this.NameLabel.Content = "增加队员";
                         break;
                     case 2:
-                        filestr = File.ReadAllText(@"..\..\neigong");
+                        filestr = Properties.Resources.neigong;
                         this.NameLabel.Content = "增加内功";
                         break;
                     case 3:
-                        filestr = File.ReadAllText(@"..\..\Talent");
+                        filestr = Properties.Resources.Talent;
                         this.NameLabel.Content = "增加天赋";
                         break;
                     case 4:
-                        filestr = File.ReadAllText(@"..\..\itemlist");
+                        filestr = Properties.Resources.itemlist;
                         this.NameLabel.Content = "增加物品";
                         break;
                     default:
@@ -65,7 +66,11 @@ namespace SaveFixForWuxia
             catch (IOException)
             {
                 MessageBox.Show("未找到程序所必需的文件,请尝试重新安装!");
-                Application.Current.Shutdown();
+                foreach (Window win in App.Current.Windows)
+                {
+                   win.Close();
+                }
+                
             }
             String pattern =@"[0-9]*=(.*?)(?: |。|\r\n)";
             Regex re = new Regex(pattern, RegexOptions.Multiline);

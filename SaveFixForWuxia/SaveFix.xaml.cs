@@ -30,16 +30,17 @@ namespace SaveFixForWuxia
                 switch (mode)
                 {
                     case 1:
-                        filestr = File.ReadAllText(@"..\..\NPClist");
+
+                        filestr = Properties.Resources.NPClist; 
                         break;
                     case 2:
-                        filestr = File.ReadAllText(@"..\..\neigong");
+                        filestr = Properties.Resources.neigong;
                         break;
                     case 3:
-                        filestr = File.ReadAllText(@"..\..\Talent");
+                        filestr = Properties.Resources.Talent;
                         break;
                     case 4:
-                        filestr = File.ReadAllText(@"..\..\itemlist");
+                        filestr = Properties.Resources.itemlist;
                         break;
                     default:
                         ConverState = 0xa1;
@@ -49,7 +50,10 @@ namespace SaveFixForWuxia
             catch (IOException)
             {
                 MessageBox.Show("未找到程序所必需的文件,请尝试重新安装!");
-                Application.Current.Shutdown();
+                foreach (Window win in App.Current.Windows)
+                {
+                    win.Close();
+                }
             }
             //如果所填入的参数是ID,则正则表达式为 ID=(名字)的形式
             String pattern = ID+ @"=(.*?)(?: |。|\r\n)";

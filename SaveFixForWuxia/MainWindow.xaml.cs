@@ -27,7 +27,10 @@ namespace SaveFixForWuxia
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            Application.Current.Shutdown();
+            foreach (Window win in App.Current.Windows)
+            {
+                win.Close();
+            }
         }
 
         private void BeginButton_Click(object sender, RoutedEventArgs e)

@@ -57,7 +57,7 @@ namespace SaveFixForWuxia
                 talentItem.Height = 31;
                 talentItem.HorizontalContentAlignment = HorizontalAlignment.Center;
                 talentItem.Content=SaveFix.ConverID(talentID.ToString(), 3);
-                String TalentfileStr = File.ReadAllText(@"..\..\Talent");
+                String TalentfileStr = Properties.Resources.Talent;
                 String pattenStr = talentItem.Content.ToString() + @"。(.*?)\r\n";
                 Regex re = new Regex(pattenStr,RegexOptions.Multiline);
                 if(re.IsMatch(TalentfileStr))
