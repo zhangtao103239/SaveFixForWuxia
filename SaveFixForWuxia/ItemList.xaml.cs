@@ -73,5 +73,17 @@ namespace SaveFixForWuxia
             this.ItemJarray.RemoveAt(SelectIndex);
             Initial();
         }
-    }
+
+        private void ChangeCountButton_Click(object sender, RoutedEventArgs e)
+        {
+            int SelectIndex = this.ItemListView.SelectedIndex;
+            if (SelectIndex == -1)
+                return;
+            ChangeCout newChangeCout = new ChangeCout(this.ItemJarray[SelectIndex]);
+            newChangeCout.Top = this.Top + this.Height / 3;
+            newChangeCout.Left = this.Left + this.Width / 3;
+            newChangeCout.ShowDialog();
+            this.Initial();
+        }
+    }                                                                                                   
 }

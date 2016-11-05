@@ -17,16 +17,16 @@
             <ListView x:Name="NeigongListView" Height="150" Width="184" Canvas.Left="10" Canvas.Top="40" ScrollViewer.VerticalScrollBarVisibility="Visible">
                 <ListViewItem Height="35" Width="163" Content="葵花宝典:    LV9" HorizontalContentAlignment="Center"></ListViewItem>
             </ListView>
-            <Button x:Name="AddNeiGongButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="45">增加内功</Button>
+            <Button x:Name="AddNeiGongButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="45" Click="AddNeiGongButton_Click">增加内功</Button>
             <Button x:Name="DelNeiGongButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="94" Click="DelNeiGongButton_Click">删除内功</Button>
             <Button x:Name="ChangeLevelButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="150" Click="ChangeLevelButton_Click">修改等级</Button>
         </Canvas>
         <Canvas Margin="10,258,13.6,60.6">
             <Label Canvas.Left="68" Canvas.Top="10">天赋列表</Label>
             <ListView x:Name="TalentListView" Height="77" Width="184" Canvas.Left="10" Canvas.Top="40" ScrollViewer.VerticalScrollBarVisibility="Visible">
-                <ListViewItem Height="35" Width="163" Content="身残志坚" HorizontalContentAlignment="Center"></ListViewItem>
+                <ListViewItem Height="31" Width="163" Content="身残志坚" HorizontalContentAlignment="Center"></ListViewItem>
             </ListView>
-            <Button x:Name="AddTalentButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="40">增加天赋</Button>
+            <Button x:Name="AddTalentButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="40" Click="AddTalentButton_Click">增加天赋</Button>
             <Button x:Name="DelTalentButton" Height="29" Width="66" Canvas.Left="232" Canvas.Top="88" Click="DelTalentButton_Click">删除天赋</Button>
         </Canvas>
         <Button Margin="48,394,224.6,0" x:Name="CancelButton" Height="30" VerticalAlignment="Top" Click="CancelButton_Click">返回</Button>

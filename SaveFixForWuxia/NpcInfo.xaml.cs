@@ -1,8 +1,10 @@
 ﻿using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -52,9 +54,20 @@ namespace SaveFixForWuxia
             {
                 ListViewItem talentItem = new ListViewItem();
                 talentItem.Width = 163;
-                talentItem.Height = 35;
+                talentItem.Height = 31;
                 talentItem.HorizontalContentAlignment = HorizontalAlignment.Center;
                 talentItem.Content=SaveFix.ConverID(talentID.ToString(), 3);
+                String TalentfileStr = File.ReadAllText(@"..\..\Talent");
+                String pattenStr = talentItem.Content.ToString() + @"。(.*?)\r\n";
+                Regex re = new Regex(pattenStr,RegexOptions.Multiline);
+                if(re.IsMatch(TalentfileStr))
+                {
+                    talentItem.ToolTip= re.Match(TalentfileStr).Groups[1];
+                }
+                else
+                {
+                    MessageBox.Show("正则表达式出错啦!请联系开发者");
+                }
                 this.TalentListView.Items.Add(talentItem);
             }
         }
@@ -105,6 +118,55 @@ namespace SaveFixForWuxia
             this.npc.NeigongList = this.NeigongJArray;
             this.npc.TalentList = this.TalentJArray;
             this.Close();
+        }
+
+        private void AddNeiGongButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (NeigongJArray.Count >= 6)
+            {
+                MessageBox.Show("内功已满", "提示");
+                return;
+            }
+            AddSomeThing addTeammate = new AddSomeThing(2);
+            addTeammate.Top = this.Top + this.Height / 3;
+            addTeammate.Left = this.Left + this.Width / 3;
+            addTeammate.ShowDialog();
+            if (String.IsNullOrEmpty(addTeammate.ResultStr))
+                return;
+            String NeiGongID = SaveFix.ConverID(addTeammate.ResultStr, 2);
+            foreach(JToken neigong in NeigongJArray)
+            {
+                if(neigong["iSkillID"].ToString()==NeiGongID)
+                {
+                    MessageBox.Show("已存在该内功!","错误");
+                    return;
+                }
+            }
+            JToken newNeigong = new JObject();
+            newNeigong["bUse"] = "false";
+            newNeigong["m_iAccumulationExp"]="0";
+            newNeigong["iSkillID"]=NeiGongID;
+            newNeigong["iLevel"]="1";
+            NeigongJArray.Add(newNeigong);
+            this.Initial();
+        }
+
+        private void AddTalentButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (TalentJArray.Count >= 4)
+            {
+                MessageBox.Show("天赋已满", "提示");
+                return;
+            }
+            AddSomeThing addTeammate = new AddSomeThing(3);
+            addTeammate.Top = this.Top + this.Height / 3;
+            addTeammate.Left = this.Left + this.Width / 3;
+            addTeammate.ShowDialog();
+            if (String.IsNullOrEmpty(addTeammate.ResultStr))
+                return;
+            String TalentID = SaveFix.ConverID(addTeammate.ResultStr, 3);
+            TalentJArray.Add(TalentID);
+            this.Initial();
         }
     }
 }

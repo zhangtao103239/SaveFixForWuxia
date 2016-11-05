@@ -14,7 +14,7 @@
         </ListView>
         <Button x:Name="AddItemButton" HorizontalAlignment="Right" Width="59" Margin="0,79,13,0" Height="24" VerticalAlignment="Top" Content="增加种类" />
         <Button x:Name="DelItemButton" Margin="0,147,13,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Right" Width="59" Content="删除物品" Click="DelItemButton_Click"></Button>
-        <Button x:Name="ChangeCountButton" Margin="0,210,13,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Right" Width="59" Content="改变数目"></Button>
+        <Button x:Name="ChangeCountButton" Margin="0,210,13,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Right" Width="59" Content="改变数目" Click="ChangeCountButton_Click"></Button>
         <Button x:Name="BcakButton" Margin="23,0,0,19" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="75" Click="BcakButton_Click">返回</Button>
         <Button x:Name="ConfirmButton" Margin="0,0,28,19" Height="30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="75" Click="ConfirmButton_Click">确定</Button>
     </Grid>

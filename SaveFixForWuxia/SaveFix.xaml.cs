@@ -124,7 +124,11 @@ namespace SaveFixForWuxia
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            if (MessageBox.Show("放弃本次更改并返回吗?", "返回", MessageBoxButton.YesNo) == MessageBoxResult.Yes)
+            {
+                this.Close();
+            }
+            else return;
         }
 
         private async void ConfirmButton_Click(object sender, RoutedEventArgs e)
@@ -142,6 +146,8 @@ namespace SaveFixForWuxia
             StreamWriter sw = new StreamWriter(sfd.FileName);
             await sw.WriteAsync(JsonConvert.SerializeObject(saveJson));
             sw.Close();
+            MessageBox.Show("保存成功", "提示");
+            this.Close();
         }
 
         private void TeamListView_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
@@ -159,7 +165,20 @@ namespace SaveFixForWuxia
 
         private void AddTeamMate_Click(object sender, RoutedEventArgs e)
         {
-
+            if(teamList.Count>=9)
+            {
+                MessageBox.Show("队伍已满","提示");
+                return;
+            }
+            AddSomeThing addTeammate = new AddSomeThing(1);
+            addTeammate.Top = this.Top + this.Height / 3;
+            addTeammate.Left = this.Left + this.Width / 3;
+            addTeammate.ShowDialog();
+            if (String.IsNullOrEmpty(addTeammate.ResultStr))
+                return;
+            String TeamMateID = ConverID(addTeammate.ResultStr, 1);
+            teamList.Add(TeamMateID);
+            this.Initial();
         }
 
         private void DelTeamMate_Click(object sender, RoutedEventArgs e)

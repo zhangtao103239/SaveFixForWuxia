@@ -74,6 +74,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddSomeThing.xaml.cs">
+      <DependentUpon>AddSomeThing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChangeCout.xaml.cs">
+      <DependentUpon>ChangeCout.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ChangeLevel.xaml.cs">
       <DependentUpon>ChangeLevel.xaml</DependentUpon>
     </Compile>
@@ -90,6 +96,14 @@
       <DependentUpon>saveLoad.xaml</DependentUpon>
     </Compile>
     <Compile Include="Settings.cs" />
+    <Page Include="AddSomeThing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChangeCout.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="ChangeLevel.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
