@@ -8,7 +8,7 @@
         Title=""  Height="136.4" Width="253.125" ResizeMode="NoResize" >
     <Grid>
         <Label x:Name="NameLabel" Margin="0,0,0.8,0" Height="30" VerticalAlignment="Top" Content="增加队员" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="16" />
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="175" Height="25"/>
-        <Button x:Name="ConfirmButton" Margin="168,65,0,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" Content="确定" Click="ConfirmButton_Click"></Button>
+        <ComboBox x:Name="comboBox" TextBoxBase.TextChanged="comboBox_TextChanged"  HorizontalAlignment="Left" Margin="10,35,0,0" VerticalAlignment="Top" Width="185" Height="25" IsEditable="True"  IsTextSearchCaseSensitive="True" IsTextSearchEnabled="True"/>
+        <Button x:Name="ConfirmButton" Margin="168,69,0,0" Height="22" VerticalAlignment="Top" HorizontalAlignment="Left" Width="59" Content="确定" Click="ConfirmButton_Click"></Button>
     </Grid>
 </Window>

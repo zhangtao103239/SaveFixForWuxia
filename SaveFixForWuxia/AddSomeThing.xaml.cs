@@ -27,6 +27,7 @@ namespace SaveFixForWuxia
         private int choose = 0;
         public AddSomeThing(int choose)
         {
+            
             this.choose = choose;
             InitializeComponent();
             this.Initial();
@@ -81,9 +82,10 @@ namespace SaveFixForWuxia
                 for(int groupIndex=0;groupIndex<groupCount;groupIndex++)
                 {
                     ComboBoxItem myComboBoxItem = new ComboBoxItem();
-                    myComboBoxItem.Width = 172.8;
+                    myComboBoxItem.Width = 170;
                     myComboBoxItem.HorizontalAlignment = HorizontalAlignment.Left;
                     myComboBoxItem.Content = re.Matches(filestr)[groupIndex].Groups[1].ToString();
+                    TextSearch.SetText(myComboBoxItem, myComboBoxItem.Content.ToString());
                     this.comboBox.Items.Add(myComboBoxItem);
                 }
                 this.comboBox.SelectedIndex = 0;
@@ -95,7 +97,32 @@ namespace SaveFixForWuxia
         {
             ComboBoxItem selectedItem = (ComboBoxItem)this.comboBox.SelectedItem;
             this.ResultStr = selectedItem.Content.ToString();
+            if (String.IsNullOrEmpty(this.ResultStr))
+                return;
             this.Close();
         }
+
+        private void comboBox_TextChanged(object sender, RoutedEventArgs e)
+        {
+            this.comboBox.IsDropDownOpen = true;
+        }
+
+
+
+
+
+
+        //private void comboBox_TextInput(object sender, TextCompositionEventArgs e)
+        //{
+        //    this.comboBox.IsDropDownOpen=true
+        //}
+
+        //private void comboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        //{
+        //    int SelectIndex = this.comboBox.SelectedIndex;
+        //    if (SelectIndex == -1)
+        //        return;
+        //    this.comboBox.Text = this.comboBox.Items[SelectIndex].ToString();
+        //}
     }
 }
