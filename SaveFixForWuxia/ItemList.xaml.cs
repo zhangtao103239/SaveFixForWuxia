@@ -85,5 +85,31 @@ namespace SaveFixForWuxia
             newChangeCout.ShowDialog();
             this.Initial();
         }
+
+        private void AddItemButton_Click(object sender, RoutedEventArgs e)
+        {
+            AddSomeThing addTeammate = new AddSomeThing(4);
+            addTeammate.Top = this.Top + this.Height / 3;
+            addTeammate.Left = this.Left + this.Width / 3;
+            addTeammate.ShowDialog();
+            if (String.IsNullOrEmpty(addTeammate.ResultStr))
+                return;
+            String ItemID = SaveFix.ConverID(addTeammate.ResultStr, 4);
+            foreach (JToken item in ItemJarray)
+            {
+                if (item["m_ItemID"].ToString() == ItemID)
+                {
+                    MessageBox.Show("该物品已经存在!", "错误");
+                    return;
+                }
+            }
+
+            JToken newItem = new JObject();
+            newItem["m_iAmount"] = "1";
+            newItem["m_ItemID"] = ItemID;
+            newItem["m_bNew"] = "True";
+            ItemJarray.Add(newItem);
+            this.Initial();
+        }
     }                                                                                                   
 }

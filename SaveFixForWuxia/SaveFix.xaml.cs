@@ -181,6 +181,14 @@ namespace SaveFixForWuxia
             if (String.IsNullOrEmpty(addTeammate.ResultStr))
                 return;
             String TeamMateID = ConverID(addTeammate.ResultStr, 1);
+            foreach (JToken teamMate in teamList)
+            {
+                if (teamMate.ToString() == TeamMateID)
+                {
+                    MessageBox.Show("此人已经在队伍里!", "错误");
+                    return;
+                }
+            }
             teamList.Add(TeamMateID);
             this.Initial();
         }
