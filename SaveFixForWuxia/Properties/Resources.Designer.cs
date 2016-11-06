@@ -109,6 +109,16 @@ namespace SaveFixForWuxia.Properties {
         }
         
         /// <summary>
+        ///   查找类似于 (Icon) 的 System.Drawing.Icon 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Icon MainICo {
+            get {
+                object obj = ResourceManager.GetObject("MainICo", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 60001=逍遥雁行式 60002=小无相功
         ///60003=逍遥鹏飞式 60004=大湿婆密咒
         ///60005=日月神功 60006=侠隐诀
