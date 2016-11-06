@@ -70,6 +70,8 @@ namespace SaveFixForWuxia
         private void DelItemButton_Click(object sender, RoutedEventArgs e)
         {
             int SelectIndex = this.ItemListView.SelectedIndex;
+            if (SelectIndex == -1)
+                return;
             this.ItemJarray.RemoveAt(SelectIndex);
             Initial();
         }
